@@ -1,0 +1,32 @@
+message EEG {
+  repeated Channel channels = 1;
+  PatientInfo ptinfo = 2;
+  repeated Annotation annots = 3;
+  DateTime epoch = 4;
+}
+
+message Channel {
+  string name = 1;
+  float samprate = 2;
+  repeated double data = 3;
+}
+
+message PatientInfo {
+  float age = 1;
+  string sex = 2;
+}
+
+message DateTime {
+  uint32 year = 1;
+  uint32 day = 3;
+  uint32 second = 5;
+  uint32 microsecond = 6;
+}
+
+
+message Annotation {
+  DateTime spot = 1;
+  string annot = 2;
+}
+
+ 
